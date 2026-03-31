@@ -3,134 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlântica Natural | Empreenda com Tiago Arcanjo</title>
+    <title>Atlântica Natural | Tiago Arcanjo</title>
     <style>
-        :root {
-            --primary-green: #005a32;
-            --accent-green: #00a859;
-            --atlantica-gold: #c5a059;
-            --whatsapp-green: #25d366;
-            --text-dark: #333;
-            --bg-light: #f4f7f6;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; text-align: center; }
+        header { background: linear-gradient(135deg, #005a32, #00a859); color: white; padding: 40px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 2.2em; }
+        .sub { margin-top: 10px; font-size: 1.1em; opacity: 0.9; }
 
-        body { font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        
-        /* Cabeçalho */
-        header { background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%); color: white; padding: 50px 20px 80px 20px; text-align: center; position: relative; }
-        h1 { font-size: 2.8em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); font-weight: 700; }
-        .sub { font-size: 1.2em; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        /* Container do Vídeo (Capa Estilizada - Sem Erros) */
-        .video-thumb-container { max-width: 720px; margin: 0 auto; position: relative; cursor: pointer; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 5px solid #fff; transition: transform 0.3s ease, box-shadow 0.3s ease; display: block; text-decoration: none; margin-bottom: -60px; z-index: 10; }
-        
-        .video-thumb-container:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+        /* Container do Vídeo Focado em Reprodução Interna */
+        .video-box { max-width: 750px; margin: 30px auto; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.3); border: 4px solid #fff; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Design da Capa Personalizada */
-        .video-thumb-design { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); width: 100%; padding-bottom: 56.25%; /* Proporção 16:9 */ position: relative; display: flex; align-items: center; justify-content: center; }
-        
-        .thumb-text-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); }
-        
-        .thumb-title { color: #fff; font-size: 1.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); text-align: center; padding: 0 20px; }
-        .thumb-subtitle { color: var(--atlantica-gold); font-size: 1em; text-transform: uppercase; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
-
-        /* Botão de Play Estilizado */
-        .play-button-visual { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background-color: rgba(255, 0, 0, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid white; box-shadow: 0 0 20px rgba(255,0,0,0.6); animation: pulse 2s infinite; }
-        
-        .play-triangle { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 8px; /* Ajuste para centralizar o triângulo */ }
-
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(255, 0, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); } }
-
-        /* Seção de Botões de Ação */
-        .action-section { background-color: #fff; padding: 100px 20px 50px 20px; text-align: center; }
-        .btn-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 800px; margin: 0 auto; }
-        .btn { padding: 20px 40px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; transition: background-color 0.3s ease, transform 0.2s ease; text-transform: uppercase; text-align: center; min-width: 280px; flex: 1; box-sizing: border-box; }
-        
-        .btn-cadastro { background-color: #ff9900; color: white; box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4); }
-        .btn-loja { background-color: var(--primary-green); color: white; box-shadow: 0 5px 15px rgba(0, 90, 50, 0.3); }
-        
+        .btn-group { margin: 30px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 0 20px; }
+        .btn { padding: 18px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: 0.3s; color: white; min-width: 280px; text-transform: uppercase; }
+        .btn-cad { background-color: #ff9900; box-shadow: 0 5px 15px rgba(255,153,0,0.4); }
+        .btn-loja { background-color: #005a32; box-shadow: 0 5px 15px rgba(0,90,50,0.3); }
         .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-        .btn:active { transform: translateY(1px); }
 
-        /* Seção de Benefícios */
-        .benefits { padding: 60px 20px; text-align: center; background-color: var(--bg-light); }
-        h2 { font-size: 2.2em; color: var(--primary-green); margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .zap-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 999; }
         
-        .card { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 6px solid var(--accent-green); text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        
-        .card-suporte { border-top: 6px solid var(--whatsapp-green); cursor: pointer; }
-        .card-suporte:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #f0fff4; }
-        
-        .card h3 { color: var(--primary-green); margin-top: 0; font-size: 1.5em; font-weight: 700; }
-        .card p { font-size: 1.05em; color: #555; }
-        .btn-suporte-texto { color: var(--whatsapp-green); font-weight: bold; display: block; margin-top: 20px; text-decoration: underline; font-size: 1.1em; }
-
-        /* Botão Flutuante WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: white; width: 65px; height: 65px; border-radius: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 2px 5px 20px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s ease; }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(5deg); }
-        .whatsapp-icon-svg { width: 35px; height: 35px; fill: white; }
-
-        /* Rodapé */
-        footer { background: #1a1a1a; color: #999; padding: 50px 20px; text-align: center; font-size: 0.9em; }
-        footer p { margin: 8px 0; }
-        .footer-credits { font-size: 0.8em; opacity: 0.7; margin-top: 25px; }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            .thumb-title { font-size: 1.4em; }
-            .btn { min-width: 100%; }
-            .video-thumb-container { border-width: 3px; }
-        }
+        .suporte { max-width: 800px; margin: 40px auto; padding: 20px; border-top: 1px solid #ddd; }
+        footer { padding: 30px; background: #222; color: #888; font-size: 0.85em; }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
     <h1>Atlântica Natural</h1>
-    <p class="sub">Descubra a Verdade sobre o Marketing Multinível com Tiago Arcanjo na Rede Cyber_Root.</p>
-
-    <a href="https://www.youtube.com/watch?v=r-ghE7Mka64" target="_blank" class="video-thumb-container" title="Clique para assistir o vídeo no YouTube">
-        <div class="video-thumb-design">
-            <div class="thumb-text-overlay">
-                <div class="thumb-subtitle">A Realidade do Negócio</div>
-                <div class="thumb-title">Marketing Multinível<br>Não é só Glamour</div>
-            </div>
-            <div class="play-button-visual">
-                <div class="play-triangle"></div>
-            </div>
-        </div>
-    </a>
+    <p class="sub">Empreenda com Saúde e Propósito na Rede Cyber_Root</p>
 </header>
 
-<section class="action-section">
-    <div class="btn-container">
-        <a href="https://cadastro.atlanticanatural.com.br/tiagoarcanjo" target="_blank" class="btn btn-cadastro">Quero me Cadastrar na Rede</a>
-        <a href="https://loja.atlanticanatural.com.br/tiagoarcanjo" target="_blank" class="btn btn-loja">Visitar Loja Virtual</a>
+<div class="video-box">
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/r-ghE7Mka64?rel=0&modestbranding=1&enablejsapi=1&origin=https://github.com" 
+            title="Marketing Multinível NÃO E SÓ GLAMOUR" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
     </div>
-</section>
+</div>
 
-<section class="benefits">
-    <h2>Por que Empreender Conosco?</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>📈 Plano de Carreira</h3>
-            <p>Um sistema meritocrático e agressivo, desenhado para recompensar quem trabalha com seriedade e constância.</p>
-        </div>
-        <div class="card">
-            <h3>⚡ Tecnologia em Saúde</h3>
-            <p>Pulseiras magnéticas e suplementação premium. Produtos que vendem pela qualidade e transformam vidas.</p>
-        </div>
-        
-        <a href="https://wa.me/5524988330868?text=Olá%20Tiago,%20estou%20na%20sua%20página%20e%20quero%20suporte%20para%20entrar%20na%20sua%20rede%20da%20Atlântica%20Natural!" class="card card-suporte" target="_blank">
-            <h3>💬 Suporte e Mentoria</h3>
-            <p>Acesso direto a Tiago Arcanjo. Aprenda as estratégias corretas para acelerar sua rede e seus resultados.</p>
-            <span class="btn-suporte-texto">Clique para falar comigo no WhatsApp!</span>
-        </a>
-    </div>
-</section>
+<div class="btn-group">
+    <a href="https://cadastro.atlanticanatural.com.br/tiagoarcanjo" target="_blank" class="btn btn-cad">Quero me Cadastrar Agora</a>
+    <a href="https://loja.atlanticanatural.com.br/tiagoarcanjo" target="_blank" class="btn btn-loja">Visitar Minha Loja</a>
+</div>
 
-<a href="https://wa.me/5524988330868?text=Olá%20Tiago,%20estou%20na%20sua%20página%20e%20tenho%20uma%20dúvida." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
-    <svg class="whatsapp-icon-svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3.2 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 338.7h-.1c-34 0-67.3-9.1-96.5-26.3l-6.9-4.1-71.8 18.9 19.3-69.9-4.5-7.1c-18.9-30-28.9-64.7-28.9-100.7 0-103.8 84.5-188.2 188.4-188.2 50.3 0 97.5 19.7 133.1 55.2 35.6 35.5 55.1 82.6 55.1 133.1 0 103.8-86 188.3-188.4 188.3zM352.1 315c-6.9-3.4-40.9-20.2-47.3-22.5-6.4-2.3-1
+<div class="suporte">
+    <h3>💬 Precisa de ajuda?</h3>
+    <p>Fale diretamente com o consultor Tiago Arcanjo para tirar suas dúvidas.</p>
+    <a href="https://wa.me/5524988330868?text=Olá%20Tiago,%20estou%20na%20sua%20página%20e%20quero%20mais%20detalhes." style="color: #00a859; font-weight: bold; text-decoration: none; font-size: 1.2em;">Clique aqui e chame no WhatsApp</a>
+</div>
+
+<a href="https://wa.me/5524988330868" class="zap-float">DÚVIDAS? CHAME AQUI</a>
+
+<footer>
+    <p>&copy; 2026 Tiago Arcanjo | Atlântica Natural - Consultor Independente</p>
+    <p>Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
